@@ -1,0 +1,25 @@
+2552870 庄程博
+①大驼峰命名法：首字母及后续单词首字母大写
+	eg1. HomeWork
+	eg2. ClassProject
+	eg3. ILovePython
+	eg4. ProgramDesign
+	eg5. AlpodjUltra
+②小驼峰命名法：首字母小写，后续单词首字母大写
+	eg1. variableName
+	eg2. iLoveTongji
+	eg3. studentName
+	eg4. theFirstHomework
+	eg5. myProject
+③匈牙利命名法：变量名前面加上一个或多个小写字母作为前缀，用以表示变量的数据类型或用途，后面再接一个描述变量本身含义的大驼峰或小驼峰式名称,但是该命名法已不再被推荐使用
+	eg1. iCount
+	eg2. fPrice
+	eg3. dPrecisionValue
+	eg4. strName
+	eg5. bIsOk
+④下划线命名法：所有字母均小写，多个单词之间使用下划线 _ 进行分隔
+	eg1. student_height
+	eg2. HOUR_TO_MINUTE
+	eg3. INCH_TO_FEET
+	eg4. file_path
+	eg5. max_amount

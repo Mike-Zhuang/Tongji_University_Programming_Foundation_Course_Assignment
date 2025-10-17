@@ -1,0 +1,18 @@
+2552870 庄程博
+1. iostream应该只用一层尖括号
+2. 拼写错误，应为std
+3. 拼写错误，应为main，且此处不需要用分号
+4. long long a，b；应该用半角标点
+5. 流方向错误，应该是cin >> a >> b
+6. 流方向错误，应该是cout << "a + b = " << a + b << endl;
+7. return 0后面少了分号
+正确代码应该是这样：
+#include <iostream>
+using namespace std;
+int main()
+{
+  long long a, b;
+  cin >> a >> b;
+  cout << "a + b = " << a + b << endl;
+  return 0;
+}
