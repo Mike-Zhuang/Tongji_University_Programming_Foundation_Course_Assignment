@@ -10,7 +10,8 @@
 This repository serves as both:
 - ☁️ A cloud storage for my programming assignments
 - 📚 A reference resource for fellow students
-- 本仓库用途：
+
+本仓库用途：
 - ☁️ 作为个人代码云存储
 - 📚 供同学们参考学习
 
