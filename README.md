@@ -23,9 +23,12 @@ To adhere to academic integrity principles, assignment code in this repository w
 - 📅 Weekly assignments are updated after DDL / 每周作业在DDL过后更新
 - 🔒 Keep code private before DDL / DDL前保持代码私密
 - ✅ Ensure it doesn't affect other students' independent thinking / 确保不会影响其他同学的独立思考
+
 This ensures both code backup and maintains a fair learning environment.
+
 这样既保证了代码的备份，又维护了公平的学习环境。
 
 ## Code Style Note / 关于代码风格
 Note: I'm a complete beginner, only learning at the course pace. The code may be clunky and inefficient - please understand!
+
 注意：我是完全的初学者，只跟着课程进度学习。代码可能比较笨重和低效 - 请谅解！
