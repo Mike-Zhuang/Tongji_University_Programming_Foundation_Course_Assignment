@@ -1,0 +1,60 @@
+一、
+int score;
+cin >> score;
+switch (score / 10){
+  case 10:
+  case 9:
+    cout << "优" << endl;
+    break;
+  case 8:
+    cout << "良" << endl;
+    break;
+  case 7:
+    cout << "中" << endl;
+    break;
+  case 6:
+    cout << "及格" << endl;
+    break;
+  default:
+    cout << "不及格" << endl;
+    break;
+}
+
+二、
+int line = 0;
+char ch;
+while (cin.get(ch))
+{
+  if (ch == 'Q')
+    break;
+  if (ch != '\n')
+    continue;
+  line++;
+}
+读取输入，遇到字符Q停止；统计读取到的换行符\n的数量，其它字符忽略。
+int line = 0;
+char ch;
+while (cin.get(ch) && ch != 'Q') {
+  if (ch == '\n') {
+    line++;
+  }
+}
+
+三、
+int abs(int num)
+{
+  return num >= 0 ? num : -num;
+}
+
+bool judge(int x, int y)
+{
+  if (abs(x) + abs(y) <= 8){
+    return true;
+  }
+  else if (x >= 0 && y >= 0 && x <= 8 && y <= 8){
+    return true;
+  }
+  else {
+    return false;
+  }
+}

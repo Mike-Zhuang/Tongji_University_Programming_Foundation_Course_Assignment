@@ -1,0 +1,26 @@
+一、
+①TestTestTestTestTest空格
+没有花括号，只有打印Test在循环，只打印Test五遍，最后空格
+②6 8
+while里面i自增，然后打印自增后的i，自增后再一次进入循环
+③1 3 7 15 31 63
+先自增，再比较，输出当前i后再迭代
+④不能
+卡在while(i < 10)死循环
+
+二、
+功能：计算a^n
+错误、不完美：n == 0 或 n < 0 时会死循环
+
+#include <iostream>
+using namespace std;
+int main()
+{
+  for(int i = 0; i < 8 ; ++i){
+    for(int j = 0; j <= i ; ++j)
+      cout << i + 1 << " ";
+    cout << endl;
+  }
+
+  return 0;
+}

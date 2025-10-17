@@ -1,0 +1,22 @@
+一、
+①int
+②long long
+③char
+④float
+二、
+auto a = 1; int
+auto b = '1'; char
+auto c = 1.0; double
+auto d = 1UL; unsigned long
+auto e = 1.0F; float
+auto f = L'P'; wchar_t
+auto g = U'\U00002155'; char32_t
+三、
+① 1 + 2 * 3.0F：float：2 * 3.0F对齐为float，再加一还是对齐为float
+② 'Z' + 'a' - 'A'：int：字符运算时转化为ASCII
+③ 4 / 3 * 3.14 * 3：double：3.14是double，乘除运算使结果与double对齐
+四、
+①1 整型；49 字符对应的ASCII码
+②cout 不完全相同 int直接 char要是直接则会输出字符，所以应该先转化为int
+③值：cout << static_cast<int>(ch) 和 cout << static_cast<int>(wch)
+  字符：cout << ch；cout << wch
