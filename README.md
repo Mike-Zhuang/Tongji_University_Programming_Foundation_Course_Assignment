@@ -1,7 +1,7 @@
 # Programming (Foundation) Course Assignments
 # 程序设计（基础）课程作业
 
-**Institution**: Tongji University Future Technology Class 2025  
+**Institution**: Tongji University Future Technology Program 2025  
 **所属**：同济大学未来技术班2025级
 
 **Schedule**: Weekly organization, 5 class hours per week  
