@@ -1,0 +1,120 @@
+一、阅读下面的程序，回答后面的问题。
+
+#include <iostream>
+using namespace std;
+
+int a = 1; // 定义1
+
+void func(int a) // 定义2
+{
+    cout << a << endl; // 语句3
+}
+
+int main()
+{
+    cout << a << endl; // 语句1
+    int a = 2; // 定义3
+    cout << a << endl; // 语句2
+
+    {
+        int a = 3; // 定义4
+        func(4);
+        cout << a << endl; // 语句4
+    }
+
+    cout << a << endl; // 语句5
+    return 0;
+}
+① 运行程序，输出什么？
+1 2 4 3 2
+② 同样是输出变量 a ，每个 cout 语句输出的变量 a 对应哪个声明？
+语句1:定义1 语句2:定义3 语句3:定义2 语句4:定义4 语句5:定义3
+③ 为什么是这样的对应结果？结合所学知识解释之。
+从内到外；之前没有局部就是全局；形参在函数体内比外部实参优先
+二、阅读下面的程序，回答后面的问题。
+
+#include <iostream>
+using namespace std;
+
+int a = 0; // 定义0
+
+namespace x1 {
+    int a = 1; // 定义1
+    namespace x2 {
+        int a = 2; // 定义2
+    }
+}
+namespace x3 {
+    int a = 3; // 定义3
+}
+
+int main()
+{
+    using namespace x3;
+
+    /*** print ***/
+
+	return 0;
+}
+① 将 /*** print ***/ 替换为 cout << a << endl; ，尝试编译运行，VS将会报错 "a"不明确 。为什么会不明确？
+二义性：有可能是全局a，也有可能是x3里面的a
+② 如果想输出定义0对应的变量 a ，应该将 /*** print ***/ 替换为什么？定义1和2呢？
+定义0: cout << ::a << endl; 定义1: cout << x1::a << endl; 定义2: cout << x1::x2::a << endl;
+三、现在有 file 文件夹，其下有三个文件，分别为 file.h 、 file1.cpp 和 file2.cpp 。阅读三个文件的代码，回答后面的问题。
+
+// file.h
+#pragma once
+void func();
+// file1.cpp
+#include <iostream>
+#include "file.h"
+
+int b = 1;
+int main()
+{
+    // print something...
+
+    func();
+
+    return 0;
+}
+// file2.cpp
+#include <iostream>
+
+int a = 0;
+void func()
+{
+    // print something...
+}
+① file1.cpp 中有两种不同的 include 方式。使用尖括号和双引号的区别是什么？
+尖括号：在系统里面查找头文件；双引号：先在当前目录查找头文件，找不到再去系统目录查找
+② 如果想在 main() 函数中输出 a 的值，应该怎么修改 file1.cpp ？在 func() 函数中输出 b 的值呢？
+main()：
+#include <iostream>
+#include "file.h"
+
+extern int a;
+int b = 1;
+
+int main()
+{
+    cout << a << endl;
+
+    func();
+    return 0;
+}
+
+func()输出b：
+#include <iostream>
+
+int a = 0;
+extern int b;
+
+void func()
+{
+    cout << b << endl;
+}
+
+③ Lam说，如果想在 func() 函数中输出 b 的值，可以将 file1.cpp 中的 int b = 1; 语句转移到头文件 file.h 中，并在 file2.cpp 中将头文件包含进来。他说的这种做法正确/合适吗？结合头文件的通常用法，给出你的判断。
+不合适。每个include这个头文件的cpp都会定义b导致重复定义。
+应该放在一个cpp中。
